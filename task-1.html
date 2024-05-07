@@ -6,6 +6,77 @@
     <title>Task 1</title>
 </head>
 <body>
-
+    <!-- HTML -->
+    <h1>Homework 1</h1>
+    <br>
+    <ul class="categories">
+        <ul class="secondary-list"> 
+            <span>Books</span>
+            <li>Novel</li>
+            <li>Biography</li>
+            <li>Science Fiction</li>
+            <li>Fantasy</li>
+            <li>Mystery</li>
+        </ul>
+        <br>
+        <ul class="secondary-list"> 
+            <span>Music</span>
+            <li>Rock</li>
+            <li>Jazz</li>
+            <li>Classical</li>
+            <li>Pop</li>
+            <li>Electronic</li>
+        </ul>
+        <br>
+        <ul class="secondary-list"> 
+            <span>Countries</span>
+            <li>France</li>
+            <li>Brazil</li>
+            <li>Japan</li>
+            <li>Canada</li>
+            <li>India</li>
+        </ul>
+        <br>
+        <ul class="secondary-list"> 
+            <span>Courses</span>
+            <li>Mathematics</li>
+            <li>Physics</li>
+            <li>Literature</li>
+            <li>History</li>
+            <li>Biology</li>
+        </ul>
+        <br>
+        <ul class="secondary-list"> 
+            <span>Movies</span>
+            <li>Action</li>
+            <li>Comedy</li>
+            <li>Drama</li>
+            <li>Thriller</li>
+            <li>Documentary</li>
+        </ul>
+    </ul>
+    <!-- Java Script -->
+    <script>
+        const categoryList = document.querySelectorAll('ul.secondary-list');
+        const count = categoryList.length;
+        console.log("Number of categories: " + count);
+        console.log("---");
+        for (let i = 0; i<categoryList.length; i++) {
+            let categoryName = categoryList[i].firstElementChild.textContent;
+            let elements = categoryList[i].querySelectorAll("li");
+            let max = 0;
+            let longestWord;
+            for (let y = 0; y<elements.length; y++) {
+                if (elements[y].textContent.length > max) {
+                    max = elements[y].textContent.length;
+                    longestWord = elements[y].textContent;
+                }
+            }
+            console.log("Category: " + categoryName);
+            console.log("Elements: " + elements.length);
+            console.log("Longest element: " + longestWord);
+            console.log("---");
+        }
+    </script>
 </body>
 </html>
